@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* Device detection: tags <html> with data-device="mobile|tablet|desktop" and data-input="touch|mouse".
+   Based on screen width and touch capability (not the browser name), and updates live on rotate/resize. */
+(function () {
+  var root = document.documentElement;
+  var coarse = window.matchMedia("(pointer: coarse)");
+  function detect() {
+    var w = window.innerWidth;
+    root.setAttribute("data-device", w < 640 ? "mobile" : (w < 1024 ? "tablet" : "desktop"));
+    root.setAttribute("data-input", coarse.matches ? "touch" : "mouse");
+  }
+  detect();
+  window.addEventListener("resize", detect, { passive: true });
+  window.addEventListener("orientationchange", detect);
+  if (coarse.addEventListener) coarse.addEventListener("change", detect);
+})();
+</script>
+<title>Safaqa | Buy and sell trusted businesses across the Middle East</title>
+<meta name="description" content="Safaqa is the Middle East's first marketplace for buying and selling vetted businesses, with full due diligence, financial audits, and KYC on both sides. Join the waitlist.">
+<meta name="keywords" content="buy a business, sell a business, MENA, Middle East, SME marketplace, business acquisition, due diligence, Safaqa, صفقة">
+<meta name="theme-color" content="#0057FB">
+<meta name="robots" content="index, follow">
+<!-- Security: only these hosts may load content or receive data. Signups can only be sent to formspree.io;
+     if you switch to another form provider, replace formspree.io in connect-src and form-action. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://safaqa.app/">
+<link rel="alternate" hreflang="en" href="https://safaqa.app/">
+<link rel="alternate" hreflang="ar" href="https://safaqa.app/?lang=ar">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Safaqa">
+<meta property="og:title" content="Safaqa | Buy and sell trusted businesses across the Middle East">
+<meta property="og:description" content="The region's first marketplace connecting business owners with fully vetted buyers. Join the waitlist.">
+<meta property="og:url" content="https://safaqa.app/">
+<meta property="og:image" content="https://safaqa.app/logo.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Palette: Safaqa product palette (Draft 1.0), with CTA band navies sampled from the reference design */
+:root{
+  --blue:#075BFF;        /* primary buttons, accent headline */
+  --blue-2:#2A74FF;      /* button gradient start */
+  --blue-deep:#0838C5;   /* icons, step numbers, hover */
+  --navy:#012677;        /* CTA band dark */
+  --navy-2:#013BA2;      /* CTA band mid */
+  --ink:#07133D;         /* headlines */
+  --text:#1F2A44;        /* body copy */
+  --muted:#566780;       /* secondary copy */
+  --eyebrow:#566780;
+  --gold:#FFC928;        /* secondary CTA */
+  --gold-2:#FFBC1F;
+  --green:#61D291;       /* verified badge fill */
+  --success:#248A4B;     /* "Verified" text */
+  --bg:#FFFFFF;
+  --surface:#F3F7FC;
+  --tint:#E9F1FF;        /* icon circles */
+  --line:#DCE5F1;
+  --radius:16px;
+  --shadow:0 10px 30px -12px rgba(5,10,49,.18);
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+html[lang="ar"]{--font:"IBM Plex Sans Arabic","Plus Jakarta Sans",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.wrap{width:100%;max-width:1180px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{color:var(--ink);line-height:1.12;letter-spacing:-.02em;font-weight:800}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{letter-spacing:0;line-height:1.35;font-weight:700}
+.eyebrow{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--eyebrow);margin-bottom:12px}
+html[lang="ar"] .eyebrow{letter-spacing:0;font-size:.85rem}
+.flip{transition:transform .2s}
+[dir="rtl"] .flip{transform:scaleX(-1)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:12px;border:0;cursor:pointer;font-weight:700;font-size:1rem;transition:transform .15s,box-shadow .2s,background .2s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:linear-gradient(180deg,var(--blue-2),var(--blue));color:#fff;box-shadow:0 8px 20px -8px rgba(0,87,251,.6)}
+.btn-primary:hover{box-shadow:0 12px 26px -8px rgba(0,87,251,.75)}
+.btn-gold{background:linear-gradient(180deg,var(--gold),var(--gold-2));color:var(--ink);box-shadow:0 8px 20px -8px rgba(255,188,67,.7)}
+.btn:focus-visible,.lang:focus-visible,input:focus-visible,.role input:focus-visible+span{outline:3px solid #9CC3FF;outline-offset:2px}
+
+/* Header */
+.header{position:fixed;inset-block-start:0;inset-inline:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -12px rgba(5,10,49,.15)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo img{height:40px;width:auto}
+.nav{display:none;gap:28px;font-size:.92rem;font-weight:500;color:var(--text)}
+.nav a:hover{color:var(--blue)}
+.header-actions{display:flex;align-items:center;gap:10px}
+.header .btn{display:none;padding:10px 18px;font-size:.9rem}
+.lang{display:inline-flex;border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px;cursor:pointer;font-weight:700;font-size:.85rem;color:var(--muted)}
+.lang span{padding:6px 12px;border-radius:999px;line-height:1;transition:background .2s,color .2s}
+.lang span:last-child{font-family:"IBM Plex Sans Arabic",sans-serif}
+html[lang="en"] .lang .l-en,html[lang="ar"] .lang .l-ar{background:var(--blue);color:#fff}
+
+/* Hero */
+.hero{position:relative;padding:88px 0 56px;background:
+  radial-gradient(900px 480px at 85% 10%,rgba(0,114,255,.14),transparent 60%),
+  radial-gradient(600px 400px at 5% 90%,rgba(255,196,75,.12),transparent 60%),
+  linear-gradient(180deg,#F8F9FD,#fff)}
+[dir="rtl"] .hero{background:
+  radial-gradient(900px 480px at 15% 10%,rgba(0,114,255,.14),transparent 60%),
+  radial-gradient(600px 400px at 95% 90%,rgba(255,196,75,.12),transparent 60%),
+  linear-gradient(180deg,#F8F9FD,#fff)}
+
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 8px;font-size:.82rem;font-weight:600;color:var(--blue-deep);box-shadow:0 2px 10px -6px rgba(5,10,49,.2);margin-bottom:22px}
+[dir="rtl"] .pill{padding:6px 8px 6px 14px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(97,210,145,.2);margin-inline-start:6px}
+.hero h1{font-size:clamp(2.1rem,7.4vw,3.6rem)}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p.lead{font-size:clamp(1.02rem,2.6vw,1.18rem);color:var(--text);max-width:540px;margin:20px 0 30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero-note{font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+.trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);font-size:.88rem;font-weight:600;color:var(--ink)}
+.trust-row span{display:inline-flex;align-items:center;gap:8px}
+.trust-row svg{color:var(--blue)}
+
+/* Hero banner */
+.banner{margin:0;border-radius:24px;overflow:hidden;box-shadow:0 24px 50px -24px rgba(5,10,49,.35);aspect-ratio:4/3;background:#F4C58A}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:38% center}
+.hero-body{display:grid;gap:26px;margin-top:32px}
+html[lang="en"] .hero h1{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero-side .trust-row{margin-top:26px}
+.hero-copy .lead{margin-bottom:0}
+html[lang="en"] .hero-copy .lead{margin-top:0}
+.hero-copy .pill{margin-bottom:18px}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.media{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;inset-block-start:10px;inset-inline-start:10px;display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--ink);font-size:.72rem;font-weight:700;padding:5px 10px;border-radius:999px}
+
+.ico{width:48px;height:48px;border-radius:50%;background:var(--tint);color:var(--blue-deep);display:grid;place-items:center;flex:none}
+.ico svg{width:55%;height:55%}
+
+/* Sections */
+section{padding:80px 0}
+.section-head{max-width:640px;margin-bottom:44px}
+.section-head h2{font-size:clamp(1.75rem,4.6vw,2.5rem)}
+.section-head p{color:var(--muted);font-size:1.05rem;margin-top:14px}
+.alt{background:var(--surface)}
+
+.split{display:grid;gap:40px;align-items:start}
+.goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.goal{padding:20px;transition:transform .2s,box-shadow .2s}
+.goal:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(5,10,49,.25)}
+.goal h3{font-size:1.02rem;margin-top:14px;font-weight:700;letter-spacing:-.01em}
+.goal p{font-size:.88rem;color:var(--muted);margin-top:4px}
+.handled{padding:26px;background:linear-gradient(160deg,#fff,var(--tint));}
+.handled h3{font-size:1.15rem}
+.handled ul{list-style:none;margin-top:16px;display:grid;gap:14px}
+.handled li{display:flex;gap:12px;align-items:flex-start}
+.handled li strong{display:block;color:var(--ink);font-size:.98rem}
+.handled li span{font-size:.88rem;color:var(--muted)}
+.tick{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none;margin-top:2px}
+.conf{display:flex;gap:10px;align-items:center;margin-top:22px;padding:12px 14px;border-radius:12px;background:#fff;border:1px dashed #BFD3F5;font-size:.88rem;color:var(--text)}
+.conf svg{color:var(--blue-deep);flex:none}
+
+/* Steps (buyers) */
+.steps{display:grid;gap:18px;counter-reset:s}
+.step{padding:24px;position:relative}
+.step-num{width:34px;height:34px;border-radius:50%;background:#EEF6FD;color:var(--blue-deep);font-weight:800;display:grid;place-items:center;font-size:.92rem;margin-bottom:16px}
+.step h3{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.step p{color:var(--muted);font-size:.93rem;margin-top:6px}
+.step .ico{position:absolute;inset-block-start:22px;inset-inline-end:22px;width:44px;height:44px}
+
+/* Trust grid */
+.trust-grid{display:grid;gap:16px}
+.trust{padding:24px;display:flex;gap:16px;align-items:flex-start}
+.trust h3{font-size:1.05rem;font-weight:700;letter-spacing:-.01em}
+.trust p{color:var(--muted);font-size:.92rem;margin-top:4px}
+.trust.feature{background:linear-gradient(150deg,var(--navy) 0%,var(--navy-2) 70%,#0554C8 100%);border:0;color:#DCE8FF;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+.trust.feature h3{color:#fff;font-size:1.35rem;line-height:1.25}
+.trust.feature p{color:#BBD0F5}
+.trust.feature .shield{width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.1);display:grid;place-items:center;color:var(--gold)}
+.trust.feature::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;border:28px solid rgba(255,196,75,.18);inset-block-end:-140px;inset-inline-end:-90px}
+
+/* Photos in sections */
+.handled .photo{position:relative;margin:-26px -26px 22px;height:200px;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden}
+.photo-chip{position:absolute;inset-block-end:12px;inset-inline-start:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.94);color:var(--ink);font-size:.75rem;font-weight:700;padding:6px 12px;border-radius:999px}
+.photo-chip svg{color:var(--blue-deep)}
+/* Opportunity cards (Draft 1.0 listing card: badges, sector, country, financial bands) */
+.opps-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:6px 16px;margin:64px 0 20px}
+.opps-head h3{font-size:1.4rem;font-weight:800;letter-spacing:-.02em}
+.opps-head .eyebrow{margin-bottom:6px}
+.opps-head small{color:var(--muted);font-size:.82rem}
+.opps{display:grid;gap:18px}
+.opp{overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.opp:hover{transform:translateY(-4px);box-shadow:0 18px 36px -16px rgba(5,10,49,.3)}
+.opp-img{position:relative;height:150px;overflow:hidden;background:var(--tint)}
+.opp-img img{transition:transform .6s ease}
+.opp:hover .opp-img img{transform:scale(1.05)}
+.badges{position:absolute;inset-block-start:10px;inset-inline-start:10px;display:flex;flex-wrap:wrap;gap:6px}
+.badges .badge{position:static}
+.badge.featured{background:var(--gold);color:var(--ink)}
+.opp-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.opp-title{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.opp-title h4{font-size:1.02rem;color:var(--ink);font-weight:700;line-height:1.3}
+.verified{display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:700;color:var(--success);white-space:nowrap}
+.opp-loc{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:.85rem;margin-top:2px}
+.fin{display:grid;gap:7px;margin:14px 0 16px;padding-top:14px;border-top:1px solid var(--line)}
+.fin div{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.fin dt{font-size:.82rem;color:var(--muted)}
+.fin dd{font-size:.88rem;font-weight:700;color:var(--ink);white-space:nowrap}
+.opp-link{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:700;color:var(--blue)}
+.opp-link:hover{color:var(--blue-deep)}
+.num{unicode-bidi:isolate;direction:ltr;display:inline-block}
+
+/* How it works (Draft 1.0 process) */
+.process{display:grid;gap:14px;counter-reset:p}
+.pstep{position:relative;padding:22px 22px 22px}
+.pstep .ico{width:46px;height:46px;margin-bottom:14px}
+.pstep h3{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;display:flex;gap:8px}
+.pstep h3 b{color:var(--blue)}
+.pstep p{color:var(--muted);font-size:.92rem;margin-top:6px}
+.pstep .arrow{display:none;position:absolute;inset-block-start:34px;inset-inline-end:-18px;width:22px;height:22px;color:#AFC2DD;z-index:1}
+
+/* Deal access panel (Draft 1.0 locked deal + verification journey) */
+.access{display:grid;gap:22px;margin-top:56px;align-items:stretch}
+.deal{overflow:hidden}
+.deal-img{position:relative;height:150px}
+.deal-body{padding:20px 22px 22px}
+.deal-body .eyebrow{margin-bottom:6px}
+.deal-body h3{font-size:1.2rem;font-weight:800;letter-spacing:-.01em}
+.locked{list-style:none;display:grid;gap:8px;margin-top:4px}
+.locked li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px;border-radius:10px;background:var(--surface);border:1px solid var(--line);font-size:.9rem;font-weight:600;color:var(--ink)}
+.locked li span:last-child{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:700;color:var(--muted)}
+.journey{padding:26px;background:linear-gradient(160deg,#fff,var(--tint))}
+.journey h3{font-size:1.25rem;font-weight:800;letter-spacing:-.01em}
+.journey > p{color:var(--muted);font-size:.95rem;margin-top:8px}
+.jsteps{list-style:none;margin-top:20px;display:grid;gap:0}
+.jsteps li{position:relative;display:flex;gap:14px;padding-bottom:18px}
+.jsteps li:not(:last-child)::before{content:"";position:absolute;inset-inline-start:15px;inset-block:32px 0;width:2px;background:#C9D8EE}
+.jdot{width:32px;height:32px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:800;font-size:.85rem;background:#fff;border:2px solid var(--blue);color:var(--blue)}
+.jsteps li.done .jdot{background:var(--blue);color:#fff}
+.jsteps li.final .jdot{background:var(--success);border-color:var(--success);color:#fff}
+.jsteps strong{display:block;color:var(--ink);font-size:.98rem;line-height:1.3;padding-top:5px}
+.jsteps div > span{display:block;color:var(--muted);font-size:.86rem;margin-top:2px}
+
+/* Across MENA (Draft 1.0 city photography + 15 countries) */
+.cities{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.city{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:3/2;background:var(--tint);box-shadow:var(--shadow)}
+.city img{transition:transform .8s ease}
+.city:hover img{transform:scale(1.06)}
+.city figcaption{position:absolute;inset:auto 0 0 0;padding:28px 14px 12px;background:linear-gradient(180deg,rgba(7,19,61,0),rgba(7,19,61,.82));color:#fff;font-weight:700;font-size:1rem;line-height:1.2}
+.city figcaption small{display:block;font-weight:500;font-size:.78rem;color:#D3E0F7;margin-top:2px}
+.city.hq::after{content:attr(data-hq);position:absolute;inset-block-start:10px;inset-inline-start:10px;background:var(--gold);color:var(--ink);font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:999px}
+.countries{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.countries span{padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.85rem;font-weight:600;color:var(--ink)}
+.countries span:first-child{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* Trust artwork (Draft 1.0) */
+.trust.feature .art{border-radius:12px;overflow:hidden;margin-bottom:22px;box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
+.trust.feature .art img{width:100%;height:auto;aspect-ratio:354/110;object-fit:cover}
+
+/* Waitlist quick paths */
+.paths{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.75)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:#fff;color:var(--blue)}
+
+/* Waitlist */
+.waitlist{padding:0 0 80px}
+.cta-band{position:relative;overflow:hidden;border-radius:24px;padding:44px 22px;color:#fff;background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 55%,#0278F6 100%)}
+.cta-band::before,.cta-band::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.cta-band::before{width:420px;height:420px;border:36px solid rgba(255,196,75,.22);inset-block-start:-200px;inset-inline-end:-160px}
+.cta-band::after{width:300px;height:300px;border:30px solid rgba(0,114,255,.35);inset-block-end:-190px;inset-inline-start:-110px}
+.cta-inner{position:relative;z-index:1;display:grid;gap:30px;align-items:center}
+.cta-band .eyebrow{color:#9FC2FF}
+.cta-band h2{color:#fff;font-size:clamp(1.7rem,4.4vw,2.4rem)}
+.cta-band p{color:#C9DAF8;margin-top:12px;max-width:520px}
+.form{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:18px;backdrop-filter:blur(6px)}
+.roles{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.role{position:relative;cursor:pointer}
+.role input{position:absolute;opacity:0;pointer-events:none}
+.role span{display:inline-block;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.28);font-size:.85rem;font-weight:600;color:#DCE8FF;transition:all .2s}
+.role input:checked+span{background:#fff;color:var(--navy);border-color:#fff}
+.field{display:flex;flex-direction:column;gap:10px}
+.field input{width:100%;padding:15px 16px;border-radius:12px;border:1px solid transparent;background:#fff;color:var(--ink);font-size:1rem}
+.field input[aria-invalid="true"]{border-color:#FF8A8A;box-shadow:0 0 0 3px rgba(255,138,138,.35)}
+.field .btn{width:100%}
+.form-msg{min-height:1.4em;font-size:.85rem;margin-top:10px;color:#FFD3D3}
+.form-fine{font-size:.78rem;color:#A9C1EC;margin-top:4px}
+.success{display:none;text-align:center;padding:16px 8px}
+.success .ok{width:56px;height:56px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;margin:0 auto 14px;animation:pop .45s cubic-bezier(.2,1.6,.4,1)}
+.success h3{color:#fff;font-size:1.3rem}
+.success p{color:#C9DAF8;margin:6px auto 0}
+.form.done form{display:none}
+.form.done .success{display:block}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+
+/* Footer */
+.footer{border-top:1px solid var(--line);padding:48px 0 28px;background:#fff}
+.foot-grid{display:grid;gap:28px}
+.footer .logo img{height:44px}
+.footer p{color:var(--muted);font-size:.92rem;margin-top:12px;max-width:340px}
+.foot-h{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--eyebrow);margin-bottom:12px}
+html[lang="ar"] .foot-h{letter-spacing:0;font-size:.88rem}
+.mail{font-weight:700;color:var(--blue);display:inline-flex;gap:8px;align-items:center}
+.mail:hover{text-decoration:underline}
+.socials{display:flex;gap:10px}
+.socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--blue-deep);transition:all .2s}
+.socials a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.copy{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+.foot-links{list-style:none;display:grid;gap:8px;font-size:.92rem}
+.foot-links a{color:var(--text)}
+.foot-links a:hover{color:var(--blue)}
+.foot-meta{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.88rem;margin-top:10px}
+.credits{margin-top:14px;font-size:.78rem;color:var(--muted)}
+.credits summary{cursor:pointer;font-weight:600;color:var(--muted)}
+.credits p{max-width:none;font-size:.78rem;margin-top:8px;line-height:1.7}
+.credits a{color:var(--blue);text-decoration:underline}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* Breakpoints (mobile-first) */
+@media (min-width:640px){
+  .wrap{padding-inline:28px}
+  .field{flex-direction:row}
+  .field .btn{width:auto;flex:none}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .opps,.process{grid-template-columns:repeat(2,1fr)}
+  .cities{grid-template-columns:repeat(3,1fr)}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .trust.feature{grid-column:1 / -1}
+  .cta-band{padding:56px 44px}
+  .banner{aspect-ratio:16/9}
+  .banner img{object-position:35% center}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+  .nav,.header .btn{display:inline-flex}
+  .hero{padding:96px 0 88px}
+  .hero-body{grid-template-columns:1.15fr 1fr;gap:56px;align-items:end;margin-top:44px}
+  .hero h1{font-size:clamp(2.2rem,3.4vw,3rem)}
+  section{padding:104px 0}
+  .split{grid-template-columns:1.15fr .85fr;gap:56px}
+  .split.rev{grid-template-columns:.85fr 1.15fr}
+  .trust-grid{grid-template-columns:repeat(3,1fr)}
+  .trust.feature{grid-column:auto;grid-row:span 3}
+  .process{grid-template-columns:repeat(4,1fr);gap:18px}
+  .pstep .arrow{display:block}
+  .pstep:last-child .arrow{display:none}
+  [dir="rtl"] .pstep .arrow{transform:scaleX(-1)}
+  .access{grid-template-columns:1fr 1fr;gap:26px}
+  .foot-grid{grid-template-columns:1.6fr 1fr 1fr 1.2fr}
+  .cta-inner{grid-template-columns:1fr 1fr;gap:48px}
+  .banner{aspect-ratio:2000/744}
+  .cta-band{padding:64px 56px}
+  .waitlist{padding-bottom:104px}
+}
+@media (min-width:1100px){
+  .opps{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ==========================================================================
+   Device-specific experience, driven by data-device / data-input on <html>
+   (set by the detection script in <head>)
+   ========================================================================== */
+a,button,label{-webkit-tap-highlight-color:transparent}
+
+/* Menu button + drop-down: phones and tablets */
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);align-items:center;justify-content:center;cursor:pointer;flex:none}
+.menu-btn svg{width:22px;height:22px}
+.menu-btn .i-close{display:none}
+.menu-btn:focus-visible{outline:3px solid #9CC3FF;outline-offset:2px}
+html.menu-open .menu-btn .i-open{display:none}
+html.menu-open .menu-btn .i-close{display:block}
+.mobile-menu{display:none}
+html[data-device="mobile"] .menu-btn,html[data-device="tablet"] .menu-btn{display:inline-flex}
+html[data-device="mobile"] .nav,html[data-device="tablet"] .nav,
+html[data-device="mobile"] .header .btn,html[data-device="tablet"] .header .btn{display:none}
+html[data-device="mobile"] .mobile-menu,html[data-device="tablet"] .mobile-menu{
+  display:block;position:absolute;inset-inline:0;inset-block-start:100%;background:#fff;border-bottom:1px solid var(--line);
+  box-shadow:0 24px 40px -24px rgba(7,19,61,.35);padding:6px 20px 20px;max-height:calc(100vh - 68px);overflow-y:auto;
+  opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility 0s .2s}
+html.menu-open .mobile-menu{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .2s}
+html.menu-open .header{background:#fff;border-color:var(--line)}
+.mm-link{display:flex;justify-content:space-between;align-items:center;min-height:52px;font-size:1.05rem;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line)}
+.mm-link svg{color:#AFC2DD}
+.mm-cta{width:100%;margin-top:18px}
+html[data-device] .mobile-menu .mm-cta{display:flex}
+
+/* Sticky waitlist bar: phones only */
+.mobile-cta{display:none}
+html[data-device="mobile"] .mobile-cta{
+  display:block;position:fixed;inset-inline:0;inset-block-end:0;z-index:45;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .3s ease}
+html[data-device="mobile"] .mobile-cta.show{transform:none}
+.mobile-cta .btn{width:100%}
+html[data-device="mobile"] .footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+html.menu-open .mobile-cta{transform:translateY(110%)}
+
+/* Phones: swipeable carousels for listings and cities */
+html[data-device="mobile"] .opps,html[data-device="mobile"] .cities{
+  display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+  margin-inline:-20px;padding:4px 20px 16px;scroll-padding-inline:20px;scrollbar-width:none}
+html[data-device="mobile"] .opps::-webkit-scrollbar,html[data-device="mobile"] .cities::-webkit-scrollbar{display:none}
+html[data-device="mobile"] .opp{flex:0 0 84%;scroll-snap-align:start}
+html[data-device="mobile"] .city{flex:0 0 78%;scroll-snap-align:start}
+/* Off-screen carousel items never scroll into view vertically, so skip their fade-in */
+html[data-device="mobile"] .opps .reveal,html[data-device="mobile"] .cities .reveal{opacity:1;transform:none}
+.dots{display:none}
+html[data-device="mobile"] .dots{display:flex;justify-content:center;gap:7px;margin-top:2px}
+.dots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:#C9D6EA;cursor:pointer;transition:width .25s,background .25s}
+.dots button[aria-current="true"]{width:22px;background:var(--blue)}
+
+/* Phones: tighter rhythm and compact step cards */
+html[data-device="mobile"] section{padding:60px 0}
+html[data-device="mobile"] .section-head{margin-bottom:26px}
+html[data-device="mobile"] .opps-head{margin-top:44px}
+html[data-device="mobile"] .access{margin-top:36px}
+html[data-device="mobile"] .pstep{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start;padding:18px}
+html[data-device="mobile"] .pstep .ico{grid-row:span 2;margin:0}
+html[data-device="mobile"] .goal{padding:16px}
+html[data-device="mobile"] .goal h3{font-size:.96rem}
+html[data-device="mobile"] .cta-band{padding:36px 18px;border-radius:20px}
+html[data-device="mobile"] .paths .btn{flex:1 1 100%}
+html[data-device="mobile"] .hero-cta .btn{width:100%}
+
+/* Tablets: two-column cards, larger touch targets */
+html[data-device="tablet"] .opps{grid-template-columns:repeat(2,1fr)}
+html[data-device="tablet"] .cities{grid-template-columns:repeat(3,1fr)}
+
+/* Touch screens (any size): bigger targets, no hover-only effects */
+html[data-input="touch"] .socials a{width:46px;height:46px}
+html[data-input="touch"] .role span{padding:11px 16px}
+html[data-input="touch"] .foot-links a{display:inline-block;padding:4px 0}
+html[data-input="touch"] .opp:hover,html[data-input="touch"] .goal:hover{transform:none;box-shadow:var(--shadow)}
+html[data-input="touch"] .opp:hover .opp-img img,html[data-input="touch"] .city:hover img{transform:none}
+html[data-input="touch"] .btn:active{transform:scale(.98)}
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 015.5 4h13A1.5 1.5 0 0120 5.5v9a1.5 1.5 0 01-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 014 14.5z"/><path d="M8 9h8M8 12h5"/></g></symbol>
+    <symbol id="i-sign" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M8 17c1.2-1.6 2-2.4 2.6-2.4.8 0 .4 2 1.2 2s1.4-1.2 2.2-1.2c.5 0 .9.6 2 1.6"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M12 3l8 3v6c0 4.6-3.3 8.3-8 9-4.7-.7-8-4.4-8-9V6l8-3z"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M8 10.5V8a4 4 0 018 0v2.5M12 14.5v2.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M15.5 4.8a3.3 3.3 0 010 6.4M18 14.8c2 .7 3.2 2.4 3.5 5.2"/></g></symbol>
+    <symbol id="i-door" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4H6.5A1.5 1.5 0 005 5.5v13A1.5 1.5 0 006.5 20H14"/><path d="M10 12h10M17 8.5l3.5 3.5-3.5 3.5"/></g></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M3 18h18M6.5 18a5.5 5.5 0 0111 0"/><path d="M12 6.5V4M5.6 9.6L4 8M18.4 9.6L20 8"/></g></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11l3.5-3.5L9 9l3-2 3 1 4.5-1.5L22 11"/><path d="M5.5 7.5L2 11l6.5 6.5c.8.8 2 .8 2.8 0M22 11l-6 6c-.8.8-2 .8-2.8 0L9.5 13.3"/><path d="M12 7l-3.3 3.3a1.4 1.4 0 002 2L13 10l3.5 3.5"/></g></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5V20h16V9.5"/><path d="M3 9.5L4.8 4h14.4L21 9.5c0 1.4-1.2 2.5-2.6 2.5S15.8 10.9 15.8 9.5c0 1.4-1.2 2.5-2.6 2.5h-2.4c-1.4 0-2.6-1.1-2.6-2.5 0 1.4-1.2 2.5-2.6 2.5S3 10.9 3 9.5z"/><path d="M10 20v-4.5h4V20"/></g></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.6-4.6"/></g></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M8 15l3.5-4 3 2.5L20 7"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></g></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16c.5-1.5 1.7-2.3 3.2-2.3s2.7.8 3.2 2.3M15 10h3M15 13.5h3"/></g></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V5.5A1.5 1.5 0 0017.5 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5"/><path d="M16.5 13.5h.01"/></g></symbol>
+    <symbol id="i-radar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3L12 3z"/><path d="M12 10v4M12 17h.01"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></g></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M6.9 8.8H3.6V20h3.3V8.8zM5.3 3.5a1.9 1.9 0 100 3.9 1.9 1.9 0 000-3.9zM20.4 13.4c0-3-1.6-4.8-4.2-4.8-1.4 0-2.4.8-2.8 1.5V8.8h-3.2V20h3.3v-5.6c0-1.5.4-2.9 2.2-2.9s1.9 1.7 1.9 3V20h3.3l-.5-6.6z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></g></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></symbol>
+  </defs>
+</svg>
+
+<header class="header" id="top">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Safaqa"><img src="logo.png" alt="Safaqa" width="125" height="40"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#sellers" data-i18n="navSellers">For Sellers</a>
+      <a href="#buyers" data-i18n="navBuyers">For Buyers</a>
+      <a href="#how" data-i18n="navHow">How it works</a>
+      <a href="#mena" data-i18n="navMena">Across MENA</a>
+      <a href="#trust" data-i18n="navTrust">Why Safaqa</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#waitlist" class="btn btn-primary"><span data-i18n="navCta">Join the waitlist</span><svg class="flip" width="16" height="16"><use href="#i-arrow"/></svg></a>
+      <button class="lang" id="langToggle" type="button" aria-label="Switch language / تغيير اللغة">
+        <span class="l-en">EN</span><span class="l-ar">ع</span>
+      </button>
+      <!-- Phones and tablets: menu button replaces the inline nav -->
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu" data-i18n-aria="navMenu">
+        <svg class="i-open" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav aria-label="Mobile" data-i18n-aria="navMobile">
+      <a class="mm-link" href="#sellers"><span data-i18n="navSellers">For Sellers</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></a>
+      <a class="mm-link" href="#buyers"><span data-i18n="navBuyers">For Buyers</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></a>
+      <a class="mm-link" href="#how"><span data-i18n="navHow">How it works</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></a>
+      <a class="mm-link" href="#mena"><span data-i18n="navMena">Across MENA</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></a>
+      <a class="mm-link" href="#trust"><span data-i18n="navTrust">Why Safaqa</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></a>
+    </nav>
+    <a href="#waitlist" class="btn btn-primary mm-cta"><span data-i18n="navCta">Join the waitlist</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+
+<main>
+  <!-- 1. HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <figure class="banner reveal">
+        <img src="hero-banner.webp" width="2000" height="744" fetchpriority="high"
+             alt="Safaqa: Your default exit plan. Your go-to market entry. A city skyline at sunset with the Safaqa marketplace open on a laptop."
+             data-i18n-alt="altBanner">
+      </figure>
+      <div class="hero-body">
+      <div class="hero-copy">
+        <span class="pill reveal"><i></i><span data-i18n="heroPill">Launching soon across MENA</span></span>
+        <!-- The English slogan is already in the banner image, so the English h1 is visually hidden (still read by search engines and screen readers). The Arabic h1 is shown. -->
+        <h1 id="hero-title" class="reveal d1" data-i18n-html="heroTitle">Your default exit plan.<br><em>Your go-to market entry.</em></h1>
+        <p class="lead reveal d2" data-i18n="heroSub">Safaqa is the region's first marketplace connecting business owners seeking an exit or investment with fully vetted buyers.</p>
+      </div>
+      <div class="hero-side">
+        <div class="hero-cta reveal d3">
+          <a href="#waitlist" class="btn btn-primary"><span data-i18n="heroCta">Join the waitlist</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></a>
+          <span class="hero-note"><svg width="16" height="16"><use href="#i-lock"/></svg><span data-i18n="heroNote">Early access for founding members</span></span>
+        </div>
+        <div class="trust-row reveal d4">
+          <span><svg width="18" height="18"><use href="#i-shield"/></svg><span data-i18n="tr1">Verified listings</span></span>
+          <span><svg width="18" height="18"><use href="#i-lock"/></svg><span data-i18n="tr2">Confidential by default</span></span>
+          <span><svg width="18" height="18"><use href="#i-id"/></svg><span data-i18n="tr3">KYC on both sides</span></span>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. FOR SELLERS -->
+  <section id="sellers" aria-labelledby="sellers-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="sEyebrow">For sellers</span>
+        <h2 id="sellers-title" data-i18n="sTitle">Your next chapter, on your terms.</h2>
+        <p data-i18n="sSub">List your business confidentially, whatever your goal. We do the heavy lifting so you can stay focused on running it.</p>
+      </div>
+      <div class="split">
+        <div class="goal-grid">
+          <div class="card goal reveal"><span class="ico"><svg><use href="#i-door"/></svg></span><h3 data-i18n="g1">Exit</h3><p data-i18n="g1d">Sell fully and realise the value you've built.</p></div>
+          <div class="card goal reveal d1"><span class="ico"><svg><use href="#i-sun"/></svg></span><h3 data-i18n="g2">Retire</h3><p data-i18n="g2d">Hand over to a successor you can trust.</p></div>
+          <div class="card goal reveal d2"><span class="ico"><svg><use href="#i-hand"/></svg></span><h3 data-i18n="g3">Bring in a partner</h3><p data-i18n="g3d">Raise capital or sell a stake to fuel growth.</p></div>
+          <div class="card goal reveal d3"><span class="ico"><svg><use href="#i-store"/></svg></span><h3 data-i18n="g4">Franchise</h3><p data-i18n="g4d">Find qualified operators to expand your brand.</p></div>
+        </div>
+        <div class="card handled reveal d2">
+          <div class="photo">
+            <img class="media" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&h=420&q=70" alt="Business owners celebrating a successful deal" data-i18n-alt="altSeller" width="900" height="420" loading="lazy">
+            <span class="photo-chip"><svg width="14" height="14"><use href="#i-lock"/></svg><span data-i18n="sellerChip">Confidential listing</span></span>
+          </div>
+          <h3 data-i18n="hTitle">Safaqa handles the hard part</h3>
+          <ul>
+            <li><span class="tick"><svg width="13" height="13"><use href="#i-check"/></svg></span><div><strong data-i18n="h1">Financial audit</strong><span data-i18n="h1d">Independent review of your books, so buyers trust the numbers.</span></div></li>
+            <li><span class="tick"><svg width="13" height="13"><use href="#i-check"/></svg></span><div><strong data-i18n="h2">Professional valuation</strong><span data-i18n="h2d">A fair, defensible asking price grounded in market data.</span></div></li>
+            <li><span class="tick"><svg width="13" height="13"><use href="#i-check"/></svg></span><div><strong data-i18n="h3">Buyer vetting</strong><span data-i18n="h3d">Only verified, funded buyers ever reach your listing.</span></div></li>
+          </ul>
+          <div class="conf"><svg width="20" height="20"><use href="#i-lock"/></svg><span data-i18n="conf">Your identity stays private until you approve each buyer.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FOR BUYERS -->
+  <section id="buyers" class="alt" aria-labelledby="buyers-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="bEyebrow">For buyers</span>
+        <h2 id="buyers-title" data-i18n="bTitle">Invest in businesses you can actually trust.</h2>
+        <p data-i18n="bSub">Browse opportunities where the groundwork is already done. Every listing on Safaqa has passed full due diligence before it reaches you.</p>
+      </div>
+      <div class="steps">
+        <div class="card step reveal"><span class="step-num">1</span><span class="ico"><svg><use href="#i-search"/></svg></span><h3 data-i18n="b1">Completed due diligence</h3><p data-i18n="b1d">Legal, operational, and commercial checks finished before a business is listed.</p></div>
+        <div class="card step reveal d1"><span class="step-num">2</span><span class="ico"><svg><use href="#i-chart"/></svg></span><h3 data-i18n="b2">Audited financials</h3><p data-i18n="b2d">Revenue, margins, and cash flow reviewed and verified by financial professionals.</p></div>
+        <div class="card step reveal d2"><span class="step-num">3</span><span class="ico"><svg><use href="#i-id"/></svg></span><h3 data-i18n="b3">Background checks</h3><p data-i18n="b3d">Owners and key stakeholders screened, so you know exactly who you're dealing with.</p></div>
+      </div>
+
+      <div class="opps-head reveal">
+        <div>
+          <span class="eyebrow" data-i18n="oEyebrow">Featured opportunities</span>
+          <h3 data-i18n="oTitle">A preview of what's coming</h3>
+        </div>
+        <small data-i18n="oNote">Illustrative listings. Financials shown as ranges.</small>
+      </div>
+      <div class="opps">
+        <article class="card opp reveal">
+          <div class="opp-img">
+            <img class="media" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&h=440&q=70" alt="Modern restaurant interior" data-i18n-alt="alt1" width="800" height="440" loading="lazy">
+            <div class="badges"><span class="badge"><svg width="12" height="12"><use href="#i-lock"/></svg><span data-i18n="oConf">Confidential</span></span><span class="badge featured">★ <span data-i18n="oFeat">Featured</span></span></div>
+          </div>
+          <div class="opp-body">
+            <div class="opp-title"><h4 data-i18n="o1">Food &amp; beverage</h4><span class="verified"><svg width="12" height="12"><use href="#i-check"/></svg><span data-i18n="oVer">Verified</span></span></div>
+            <div class="opp-loc"><svg width="14" height="14"><use href="#i-pin"/></svg><span data-i18n="cLB">Lebanon</span></div>
+            <dl class="fin">
+              <div><dt data-i18n="fAsk">Asking price</dt><dd><span class="num">$100k–$500k</span></dd></div>
+              <div><dt data-i18n="fRev">Annual revenue</dt><dd><span class="num">$100k–$500k</span></dd></div>
+              <div><dt data-i18n="fMar">Profit margin</dt><dd><span class="num">10–20%</span></dd></div>
+            </dl>
+            <a class="opp-link" href="#waitlist"><span data-i18n="oCta">Get early access</span><svg class="flip" width="14" height="14"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="card opp reveal d1">
+          <div class="opp-img">
+            <img class="media" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&h=440&q=70" alt="Metal fabrication on a factory floor" data-i18n-alt="alt2" width="800" height="440" loading="lazy">
+            <div class="badges"><span class="badge"><svg width="12" height="12"><use href="#i-lock"/></svg><span data-i18n="oConf">Confidential</span></span><span class="badge featured">★ <span data-i18n="oFeat">Featured</span></span></div>
+          </div>
+          <div class="opp-body">
+            <div class="opp-title"><h4 data-i18n="o2">Manufacturing</h4><span class="verified"><svg width="12" height="12"><use href="#i-check"/></svg><span data-i18n="oVer">Verified</span></span></div>
+            <div class="opp-loc"><svg width="14" height="14"><use href="#i-pin"/></svg><span data-i18n="cSA">Saudi Arabia</span></div>
+            <dl class="fin">
+              <div><dt data-i18n="fAsk">Asking price</dt><dd><span class="num">$1m–$5m</span></dd></div>
+              <div><dt data-i18n="fRev">Annual revenue</dt><dd><span class="num">$1m–$5m</span></dd></div>
+              <div><dt data-i18n="fMar">Profit margin</dt><dd><span class="num">20–30%</span></dd></div>
+            </dl>
+            <a class="opp-link" href="#waitlist"><span data-i18n="oCta">Get early access</span><svg class="flip" width="14" height="14"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="card opp reveal d2">
+          <div class="opp-img">
+            <img class="media" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&h=440&q=70" alt="Bright modern office space" data-i18n-alt="alt3" width="800" height="440" loading="lazy">
+            <div class="badges"><span class="badge"><svg width="12" height="12"><use href="#i-lock"/></svg><span data-i18n="oConf">Confidential</span></span></div>
+          </div>
+          <div class="opp-body">
+            <div class="opp-title"><h4 data-i18n="o3">Professional services</h4><span class="verified"><svg width="12" height="12"><use href="#i-check"/></svg><span data-i18n="oVer">Verified</span></span></div>
+            <div class="opp-loc"><svg width="14" height="14"><use href="#i-pin"/></svg><span data-i18n="cAE">United Arab Emirates</span></div>
+            <dl class="fin">
+              <div><dt data-i18n="fAsk">Asking price</dt><dd><span class="num">$500k–$1m</span></dd></div>
+              <div><dt data-i18n="fRev">Annual revenue</dt><dd><span class="num">$500k–$1m</span></dd></div>
+              <div><dt data-i18n="fMar">Profit margin</dt><dd><span class="num">10–20%</span></dd></div>
+            </dl>
+            <a class="opp-link" href="#waitlist"><span data-i18n="oCta">Get early access</span><svg class="flip" width="14" height="14"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="card opp reveal d3">
+          <div class="opp-img">
+            <img class="media" src="img/listing-fitness.jpg" alt="Fitness studio with modern training equipment" data-i18n-alt="alt4" width="900" height="243" loading="lazy">
+            <div class="badges"><span class="badge"><svg width="12" height="12"><use href="#i-lock"/></svg><span data-i18n="oConf">Confidential</span></span></div>
+          </div>
+          <div class="opp-body">
+            <div class="opp-title"><h4 data-i18n="o4">Fitness &amp; wellness</h4><span class="verified"><svg width="12" height="12"><use href="#i-check"/></svg><span data-i18n="oVer">Verified</span></span></div>
+            <div class="opp-loc"><svg width="14" height="14"><use href="#i-pin"/></svg><span data-i18n="cLB">Lebanon</span></div>
+            <dl class="fin">
+              <div><dt data-i18n="fAsk">Asking price</dt><dd><span class="num">$100k–$500k</span></dd></div>
+              <div><dt data-i18n="fRev">Annual revenue</dt><dd><span class="num">$100k–$500k</span></dd></div>
+              <div><dt data-i18n="fMar">Profit margin</dt><dd><span class="num">10–20%</span></dd></div>
+            </dl>
+            <a class="opp-link" href="#waitlist"><span data-i18n="oCta">Get early access</span><svg class="flip" width="14" height="14"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3b. HOW SAFAQA WORKS -->
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="pEyebrow">How Safaqa works</span>
+        <h2 id="how-title" data-i18n="pTitle">A simpler, safer way to do business.</h2>
+        <p data-i18n="pSub">From first look to closing, every step happens inside a verified, confidential process.</p>
+      </div>
+      <div class="process">
+        <div class="card pstep reveal"><span class="ico"><svg><use href="#i-search"/></svg></span><h3><b>1.</b><span data-i18n="p1">Discover opportunities</span></h3><p data-i18n="p1d">Browse verified businesses across MENA.</p><svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+        <div class="card pstep reveal d1"><span class="ico"><svg><use href="#i-sign"/></svg></span><h3><b>2.</b><span data-i18n="p2">Request access</span></h3><p data-i18n="p2d">Sign an NDA and get detailed business insights.</p><svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+        <div class="card pstep reveal d2"><span class="ico"><svg><use href="#i-chat"/></svg></span><h3><b>3.</b><span data-i18n="p3">Connect and evaluate</span></h3><p data-i18n="p3d">Communicate securely with qualified parties.</p><svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+        <div class="card pstep reveal d3"><span class="ico"><svg><use href="#i-hand"/></svg></span><h3><b>4.</b><span data-i18n="p4">Complete the deal</span></h3><p data-i18n="p4d">Get expert support through due diligence and closing.</p><svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></div>
+      </div>
+
+      <div class="access">
+        <article class="card deal reveal">
+          <div class="deal-img">
+            <img class="media" src="img/listing-fitness.jpg" alt="Fitness studio with modern training equipment" data-i18n-alt="alt4" width="900" height="243" loading="lazy">
+            <div class="badges"><span class="badge"><svg width="12" height="12"><use href="#i-lock"/></svg><span data-i18n="oConf">Confidential</span></span></div>
+          </div>
+          <div class="deal-body">
+            <span class="eyebrow" data-i18n="dEyebrow">Illustrative listing</span>
+            <h3 data-i18n="dTitle">Established Fitness Studio</h3>
+            <div class="opp-loc"><svg width="14" height="14"><use href="#i-pin"/></svg><span data-i18n="dLoc">Beirut, Lebanon · Fitness &amp; wellness</span></div>
+            <dl class="fin">
+              <div><dt data-i18n="fAsk">Asking price</dt><dd><span class="num">$100k–$500k</span></dd></div>
+              <div><dt data-i18n="fRev">Annual revenue</dt><dd><span class="num">$100k–$500k</span></dd></div>
+              <div><dt data-i18n="fMar">Profit margin</dt><dd><span class="num">10–20%</span></dd></div>
+            </dl>
+            <ul class="locked">
+              <li><span data-i18n="l1">Business information</span><span><svg width="13" height="13"><use href="#i-lock"/></svg><span data-i18n="lLocked">Locked</span></span></li>
+              <li><span data-i18n="l2">Financial documents</span><span><svg width="13" height="13"><use href="#i-lock"/></svg><span data-i18n="lLocked">Locked</span></span></li>
+              <li><span data-i18n="l3">Owner contact details</span><span><svg width="13" height="13"><use href="#i-lock"/></svg><span data-i18n="lLocked">Locked</span></span></li>
+            </ul>
+          </div>
+        </article>
+        <div class="card journey reveal d2">
+          <h3 data-i18n="jTitle">Verify once. Unlock serious deals.</h3>
+          <p data-i18n="jSub">Private details stay locked until a buyer is fully verified and has signed the NDA for that specific deal.</p>
+          <ol class="jsteps">
+            <li class="done"><span class="jdot">1</span><div><strong data-i18n="j1">Create your account</strong><span data-i18n="j1d">Sign up or log in to Safaqa.</span></div></li>
+            <li class="done"><span class="jdot">2</span><div><strong data-i18n="j2">Verify your email</strong><span data-i18n="j2d">Confirm your address with a one-time code.</span></div></li>
+            <li><span class="jdot">3</span><div><strong data-i18n="j3">Complete your buyer profile</strong><span data-i18n="j3d">Buyer type, industries of interest and budget range.</span></div></li>
+            <li><span class="jdot">4</span><div><strong data-i18n="j4">Complete KYC</strong><span data-i18n="j4d">Submit your identity documents for review.</span></div></li>
+            <li><span class="jdot">5</span><div><strong data-i18n="j5">Sign the NDA</strong><span data-i18n="j5d">Request access to the specific opportunity.</span></div></li>
+            <li class="final"><span class="jdot"><svg width="14" height="14"><use href="#i-check"/></svg></span><div><strong data-i18n="j6">Access granted</strong><span data-i18n="j6d">Business information, financials and owner contact unlock.</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3c. ACROSS MENA -->
+  <section id="mena" class="alt" aria-labelledby="mena-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="mEyebrow">Across MENA</span>
+        <h2 id="mena-title" data-i18n="mTitle">One marketplace. Fifteen markets.</h2>
+        <p data-i18n="mSub">Headquartered in Beirut, serving business owners and investors from Morocco to Oman.</p>
+      </div>
+      <div class="cities">
+        <figure class="city hq reveal" data-hq="HQ"><img class="media" src="img/city-beirut.jpg" alt="Beirut at night" data-i18n-alt="altBeirut" loading="lazy" style="object-position:70% center"><figcaption><span data-i18n="ctBeirut">Beirut</span><small data-i18n="cLB">Lebanon</small></figcaption></figure>
+        <figure class="city reveal d1"><img class="media" src="img/city-riyadh.jpg" alt="Riyadh skyline at dusk" data-i18n-alt="altRiyadh" loading="lazy" style="object-position:72% center"><figcaption><span data-i18n="ctRiyadh">Riyadh</span><small data-i18n="cSA">Saudi Arabia</small></figcaption></figure>
+        <figure class="city reveal d2"><img class="media" src="img/city-dubai.jpg" alt="Dubai skyline" data-i18n-alt="altDubai" loading="lazy"><figcaption><span data-i18n="ctDubai">Dubai</span><small data-i18n="cAE">United Arab Emirates</small></figcaption></figure>
+        <figure class="city reveal"><img class="media" src="img/city-cairo.jpg" alt="Cairo and the Nile" data-i18n-alt="altCairo" loading="lazy"><figcaption><span data-i18n="ctCairo">Cairo</span><small data-i18n="cEG">Egypt</small></figcaption></figure>
+        <figure class="city reveal d1"><img class="media" src="img/city-amman.jpg" alt="Amman skyline at sunset" data-i18n-alt="altAmman" loading="lazy"><figcaption><span data-i18n="ctAmman">Amman</span><small data-i18n="cJO">Jordan</small></figcaption></figure>
+        <figure class="city reveal d2"><img class="media" src="img/city-casablanca.jpg" alt="Casablanca rooftops" data-i18n-alt="altCasa" loading="lazy"><figcaption><span data-i18n="ctCasa">Casablanca</span><small data-i18n="cMA">Morocco</small></figcaption></figure>
+      </div>
+      <div class="countries reveal" aria-label="Countries served" data-i18n-aria="cAria">
+        <span data-i18n="c15">15 countries</span>
+        <span data-i18n="cMA">Morocco</span><span data-i18n="cDZ">Algeria</span><span data-i18n="cTN">Tunisia</span><span data-i18n="cLY">Libya</span><span data-i18n="cEG">Egypt</span><span data-i18n="cLB">Lebanon</span><span data-i18n="cJO">Jordan</span><span data-i18n="cSA">Saudi Arabia</span><span data-i18n="cKW">Kuwait</span><span data-i18n="cBH">Bahrain</span><span data-i18n="cQA">Qatar</span><span data-i18n="cAE">United Arab Emirates</span><span data-i18n="cOM">Oman</span><span data-i18n="cIQ">Iraq</span><span data-i18n="cSY">Syria</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHY SAFAQA -->
+  <section id="trust" aria-labelledby="trust-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="tEyebrow">Why Safaqa</span>
+        <h2 id="trust-title" data-i18n="tTitle">A trust layer for every deal.</h2>
+        <p data-i18n="tSub">Buying or selling a business is one of the biggest decisions you'll make. We verify every side of the table so you can move forward with confidence.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="card trust feature reveal">
+          <div>
+            <div class="art"><img src="img/trust-art.png" alt="Blue shield and gold lock wrapped in a yellow ribbon" data-i18n-alt="altTrust" width="354" height="110" loading="lazy"></div>
+            <span class="eyebrow" style="color:#9FC2FF" data-i18n="tfEyebrow">Trust &amp; confidentiality</span>
+          </div>
+          <div><h3 data-i18n="tfTitle">Verified on both sides. No exceptions.</h3><p data-i18n="tfSub" style="margin-top:10px">Sellers and buyers pass the same rigorous checks before a single conversation begins.</p></div>
+        </div>
+        <div class="card trust reveal d1"><span class="ico"><svg><use href="#i-doc"/></svg></span><div><h3 data-i18n="t1">Full due diligence</h3><p data-i18n="t1d">Legal, commercial, and operational review of every listed business.</p></div></div>
+        <div class="card trust reveal d2"><span class="ico"><svg><use href="#i-chart"/></svg></span><div><h3 data-i18n="t2">Financial audits</h3><p data-i18n="t2d">Independently verified statements, not self-reported figures.</p></div></div>
+        <div class="card trust reveal d1"><span class="ico"><svg><use href="#i-id"/></svg></span><div><h3 data-i18n="t3">KYC on both sides</h3><p data-i18n="t3d">Identity verification for every seller and every buyer.</p></div></div>
+        <div class="card trust reveal d2"><span class="ico"><svg><use href="#i-wallet"/></svg></span><div><h3 data-i18n="t4">Proof of funds</h3><p data-i18n="t4d">Buyers demonstrate the capital to close before accessing sensitive data.</p></div></div>
+        <div class="card trust reveal d3"><span class="ico"><svg><use href="#i-radar"/></svg></span><div><h3 data-i18n="t5">Risk analysis</h3><p data-i18n="t5d">Clear risk profiles that flag what matters before you commit.</p></div></div>
+        <div class="card trust reveal d3"><span class="ico"><svg><use href="#i-lock"/></svg></span><div><h3 data-i18n="t6">Controlled access</h3><p data-i18n="t6d">Sensitive information is shared only with qualified buyers.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WAITLIST -->
+  <section id="waitlist" class="waitlist" aria-labelledby="wl-title">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div class="cta-inner">
+          <div>
+            <span class="eyebrow" data-i18n="wEyebrow">Ready for what's next?</span>
+            <h2 id="wl-title" data-i18n="wTitle">Be first in line when Safaqa launches.</h2>
+            <p data-i18n="wSub">Join the waitlist for early access, priority onboarding, and launch updates. No spam, ever.</p>
+            <div class="paths">
+              <button type="button" class="btn btn-gold" data-role="seller"><span data-i18n="pathSell">List your business</span><svg class="flip" width="16" height="16"><use href="#i-arrow"/></svg></button>
+              <button type="button" class="btn btn-ghost" data-role="buyer"><span data-i18n="pathBuy">Explore opportunities</span><svg class="flip" width="16" height="16"><use href="#i-arrow"/></svg></button>
+            </div>
+          </div>
+          <div class="form" id="formBox">
+            <!--
+              Signups are sent to the endpoint in WAITLIST_ENDPOINT (script at the bottom of this file).
+              method="post" keeps email addresses out of the page URL even if the script fails to load.
+            -->
+            <form id="waitlistForm" method="post" novalidate>
+              <!-- Spam trap: hidden from people, bots fill it in. Formspree drops any submission where _gotcha is filled. -->
+              <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+                <label>Leave this field empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+              </div>
+              <fieldset class="roles" style="border:0">
+                <legend class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" data-i18n="roleLegend">I am interested in</legend>
+                <label class="role"><input type="radio" name="role" value="seller"><span data-i18n="rSell">Selling</span></label>
+                <label class="role"><input type="radio" name="role" value="buyer" checked><span data-i18n="rBuy">Buying</span></label>
+                <label class="role"><input type="radio" name="role" value="both"><span data-i18n="rBoth">Both</span></label>
+              </fieldset>
+              <div class="field">
+                <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" data-i18n="emailLabel">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" dir="ltr" data-i18n-ph="emailPh" placeholder="you@company.com">
+                <button type="submit" class="btn btn-gold"><span data-i18n="submit">Join the waitlist</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></button>
+              </div>
+              <div class="form-msg" id="formMsg" role="alert" aria-live="assertive"></div>
+              <p class="form-fine" data-i18n="fine">We'll only use your email to share Safaqa launch news.</p>
+            </form>
+            <div class="success" role="status" aria-live="polite">
+              <div class="ok"><svg width="28" height="28"><use href="#i-check"/></svg></div>
+              <h3 data-i18n="okTitle">You're on the list!</h3>
+              <p data-i18n="okSub">Thank you for joining. We'll be in touch with early access as soon as Safaqa opens.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 6. FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo" aria-label="Safaqa"><img src="logo.png" alt="Safaqa" width="138" height="44" loading="lazy"></a>
+        <p data-i18n="fAbout">Connecting business owners and investors across MENA through trust, transparency, and structure.</p>
+        <div class="foot-meta"><svg width="15" height="15"><use href="#i-pin"/></svg><span data-i18n="fLoc">Beirut, Lebanon · Serving MENA</span></div>
+      </div>
+      <div>
+        <div class="foot-h" data-i18n="fExplore">Explore</div>
+        <ul class="foot-links">
+          <li><a href="#sellers" data-i18n="navSellers">For Sellers</a></li>
+          <li><a href="#buyers" data-i18n="navBuyers">For Buyers</a></li>
+          <li><a href="#how" data-i18n="navHow">How it works</a></li>
+          <li><a href="#mena" data-i18n="navMena">Across MENA</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-h" data-i18n="fCompany">Company</div>
+        <ul class="foot-links">
+          <li><a href="#trust" data-i18n="navTrust">Why Safaqa</a></li>
+          <li><a href="#waitlist" data-i18n="navCta">Join the waitlist</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-h" data-i18n="fContact">Contact</div>
+        <a class="mail" href="mailto:contact@safaqa.app" dir="ltr"><svg width="18" height="18"><use href="#i-mail"/></svg>contact@safaqa.app</a>
+        <div class="foot-h" style="margin-top:22px" data-i18n="fFollow">Follow us</div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/safaqa-app/" target="_blank" rel="noopener noreferrer" aria-label="Safaqa on LinkedIn"><svg width="18" height="18"><use href="#i-linkedin"/></svg></a>
+          <a href="https://x.com/Safaqahq" target="_blank" rel="noopener noreferrer" aria-label="Safaqa on X"><svg width="16" height="16"><use href="#i-x"/></svg></a>
+          <a href="https://www.instagram.com/safaqaapp/" target="_blank" rel="noopener noreferrer" aria-label="Safaqa on Instagram"><svg width="18" height="18"><use href="#i-insta"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61595251056599" target="_blank" rel="noopener noreferrer" aria-label="Safaqa on Facebook"><svg width="18" height="18"><use href="#i-facebook"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="year">2026</span> <span data-i18n="fCopy">Safaqa. All rights reserved.</span></span>
+      <span data-i18n="fMade">Built for the Middle East's business owners.</span>
+    </div>
+    <!-- City photos are CC BY / CC BY-SA licensed (Wikimedia Commons): keep this attribution wherever they are used -->
+    <details class="credits">
+      <summary data-i18n="fCredits">Photo credits</summary>
+      <p dir="ltr">
+        Beirut: paul saad, <a href="https://commons.wikimedia.org/wiki/File:Beirut_at_Night.jpg" rel="noopener noreferrer" target="_blank">Beirut at Night</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener noreferrer" target="_blank">CC BY-SA 4.0</a> ·
+        Riyadh: B.alotaby, <a href="https://commons.wikimedia.org/wiki/File:Riyadh_Skyline.jpg" rel="noopener noreferrer" target="_blank">Riyadh Skyline</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener noreferrer" target="_blank">CC BY-SA 4.0</a> ·
+        Dubai: Lxs, <a href="https://commons.wikimedia.org/wiki/File:Dubai_Skyline_at_sunset.jpg" rel="noopener noreferrer" target="_blank">Dubai Skyline at sunset</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer" target="_blank">CC BY 4.0</a> ·
+        Cairo: Staeiou, <a href="https://commons.wikimedia.org/wiki/File:Cairo_and_Nile_Skyline.jpg" rel="noopener noreferrer" target="_blank">Cairo and Nile Skyline</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="noopener noreferrer" target="_blank">CC BY-SA 2.0</a> ·
+        Amman: Ibrahim nabeel salah, <a href="https://commons.wikimedia.org/wiki/File:Amman_Skyline_at_Sunset_-_Jordan.jpg" rel="noopener noreferrer" target="_blank">Amman Skyline at Sunset</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer" target="_blank">CC BY 4.0</a> ·
+        Casablanca: elchicogris, <a href="https://commons.wikimedia.org/wiki/File:Casablanca_(1).jpg" rel="noopener noreferrer" target="_blank">Casablanca (1)</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="noopener noreferrer" target="_blank">CC BY-SA 2.0</a>.
+        City photos cropped and resized. Other photos: Unsplash.
+      </p>
+    </details>
+  </div>
+</footer>
+
+<!-- Phones: sticky waitlist bar (shown after the hero, hidden near the form) -->
+<div class="mobile-cta" id="mobileCta">
+  <a href="#waitlist" class="btn btn-primary" tabindex="-1"><span data-i18n="navCta">Join the waitlist</span><svg class="flip" width="18" height="18"><use href="#i-arrow"/></svg></a>
+</div>
+
+<script>
+/* ==========================================================================
+   WAITLIST SETUP: paste your form endpoint here, e.g. "https://formspree.io/f/abcdwxyz".
+   Formspree (or similar) then emails each signup to contact@safaqa.app and keeps a list
+   you can export. Until this is set, the form tells visitors signups are not open yet.
+   ========================================================================== */
+const WAITLIST_ENDPOINT = "";
+
+const I18N = {
+  en: {
+    metaTitle: "Safaqa | Buy and sell trusted businesses across the Middle East",
+    metaDesc: "Safaqa is the Middle East's first marketplace for buying and selling vetted businesses, with full due diligence, financial audits, and KYC on both sides. Join the waitlist.",
+    navSellers: "For Sellers", navBuyers: "For Buyers", navTrust: "Why Safaqa", navCta: "Join the waitlist",
+    heroPill: "Launching soon across MENA",
+    heroTitle: "Your default exit plan.<br><em>Your go-to market entry.</em>",
+    heroSub: "Safaqa is the region's first marketplace connecting business owners seeking an exit or investment with fully vetted buyers.",
+    heroCta: "Join the waitlist", heroNote: "Early access for founding members",
+    tr1: "Verified listings", tr2: "Confidential by default", tr3: "KYC on both sides",
+    altBanner: "Safaqa: Your default exit plan. Your go-to market entry. A city skyline at sunset with the Safaqa marketplace open on a laptop.",
+    sEyebrow: "For sellers", sTitle: "Your next chapter, on your terms.",
+    sSub: "List your business confidentially, whatever your goal. We do the heavy lifting so you can stay focused on running it.",
+    g1: "Exit", g1d: "Sell fully and realise the value you've built.",
+    g2: "Retire", g2d: "Hand over to a successor you can trust.",
+    g3: "Bring in a partner", g3d: "Raise capital or sell a stake to fuel growth.",
+    g4: "Franchise", g4d: "Find qualified operators to expand your brand.",
+    hTitle: "Safaqa handles the hard part",
+    h1: "Financial audit", h1d: "Independent review of your books, so buyers trust the numbers.",
+    h2: "Professional valuation", h2d: "A fair, defensible asking price grounded in market data.",
+    h3: "Buyer vetting", h3d: "Only verified, funded buyers ever reach your listing.",
+    conf: "Your identity stays private until you approve each buyer.",
+    bEyebrow: "For buyers", bTitle: "Invest in businesses you can actually trust.",
+    bSub: "Browse opportunities where the groundwork is already done. Every listing on Safaqa has passed full due diligence before it reaches you.",
+    b1: "Completed due diligence", b1d: "Legal, operational, and commercial checks finished before a business is listed.",
+    b2: "Audited financials", b2d: "Revenue, margins, and cash flow reviewed and verified by financial professionals.",
+    b3: "Background checks", b3d: "Owners and key stakeholders screened, so you know exactly who you're dealing with.",
+    navHow: "How it works", navMena: "Across MENA", navMenu: "Menu", navMobile: "Site menu",
+    oEyebrow: "Featured opportunities", oTitle: "A preview of what's coming", oNote: "Illustrative listings. Financials shown as ranges.",
+    oConf: "Confidential", oFeat: "Featured", oVer: "Verified", oCta: "Get early access",
+    o1: "Food & beverage", o2: "Manufacturing", o3: "Professional services", o4: "Fitness & wellness",
+    fAsk: "Asking price", fRev: "Annual revenue", fMar: "Profit margin",
+    alt4: "Fitness studio with modern training equipment",
+    pEyebrow: "How Safaqa works", pTitle: "A simpler, safer way to do business.",
+    pSub: "From first look to closing, every step happens inside a verified, confidential process.",
+    p1: "Discover opportunities", p1d: "Browse verified businesses across MENA.",
+    p2: "Request access", p2d: "Sign an NDA and get detailed business insights.",
+    p3: "Connect and evaluate", p3d: "Communicate securely with qualified parties.",
+    p4: "Complete the deal", p4d: "Get expert support through due diligence and closing.",
+    dEyebrow: "Illustrative listing", dTitle: "Established Fitness Studio", dLoc: "Beirut, Lebanon · Fitness & wellness",
+    l1: "Business information", l2: "Financial documents", l3: "Owner contact details", lLocked: "Locked",
+    jTitle: "Verify once. Unlock serious deals.",
+    jSub: "Private details stay locked until a buyer is fully verified and has signed the NDA for that specific deal.",
+    j1: "Create your account", j1d: "Sign up or log in to Safaqa.",
+    j2: "Verify your email", j2d: "Confirm your address with a one-time code.",
+    j3: "Complete your buyer profile", j3d: "Buyer type, industries of interest and budget range.",
+    j4: "Complete KYC", j4d: "Submit your identity documents for review.",
+    j5: "Sign the NDA", j5d: "Request access to the specific opportunity.",
+    j6: "Access granted", j6d: "Business information, financials and owner contact unlock.",
+    mEyebrow: "Across MENA", mTitle: "One marketplace. Fifteen markets.",
+    mSub: "Headquartered in Beirut, serving business owners and investors from Morocco to Oman.",
+    ctBeirut: "Beirut", ctRiyadh: "Riyadh", ctDubai: "Dubai", ctCairo: "Cairo", ctAmman: "Amman", ctCasa: "Casablanca",
+    altBeirut: "Beirut at night", altRiyadh: "Riyadh skyline at dusk", altDubai: "Dubai skyline", altCairo: "Cairo and the Nile", altAmman: "Amman skyline at sunset", altCasa: "Casablanca rooftops",
+    c15: "15 countries", cAria: "Countries served",
+    cMA: "Morocco", cDZ: "Algeria", cTN: "Tunisia", cLY: "Libya", cEG: "Egypt", cLB: "Lebanon", cJO: "Jordan", cSA: "Saudi Arabia",
+    cKW: "Kuwait", cBH: "Bahrain", cQA: "Qatar", cAE: "United Arab Emirates", cOM: "Oman", cIQ: "Iraq", cSY: "Syria",
+    tfEyebrow: "Trust & confidentiality", altTrust: "Blue shield and gold lock wrapped in a yellow ribbon",
+    pathSell: "List your business", pathBuy: "Explore opportunities",
+    fLoc: "Beirut, Lebanon · Serving MENA", fExplore: "Explore", fCompany: "Company", fCredits: "Photo credits",
+    sellerChip: "Confidential listing", altSeller: "Business owners celebrating a successful deal",
+    alt1: "Modern restaurant interior", alt2: "Metal fabrication on a factory floor", alt3: "Bright modern office space",
+    tEyebrow: "Why Safaqa", tTitle: "A trust layer for every deal.",
+    tSub: "Buying or selling a business is one of the biggest decisions you'll make. We verify every side of the table so you can move forward with confidence.",
+    tfTitle: "Verified on both sides. No exceptions.", tfSub: "Sellers and buyers pass the same rigorous checks before a single conversation begins.",
+    t1: "Full due diligence", t1d: "Legal, commercial, and operational review of every listed business.",
+    t2: "Financial audits", t2d: "Independently verified statements, not self-reported figures.",
+    t3: "KYC on both sides", t3d: "Identity verification for every seller and every buyer.",
+    t4: "Proof of funds", t4d: "Buyers demonstrate the capital to close before accessing sensitive data.",
+    t5: "Risk analysis", t5d: "Clear risk profiles that flag what matters before you commit.",
+    t6: "Controlled access", t6d: "Sensitive information is shared only with qualified buyers.",
+    wEyebrow: "Ready for what's next?", wTitle: "Be first in line when Safaqa launches.",
+    wSub: "Join the waitlist for early access, priority onboarding, and launch updates. No spam, ever.",
+    roleLegend: "I am interested in", rSell: "Selling", rBuy: "Buying", rBoth: "Both",
+    emailLabel: "Email address", emailPh: "you@company.com", submit: "Join the waitlist",
+    fine: "We'll only use your email to share Safaqa launch news.",
+    errEmpty: "Please enter your email address.", errInvalid: "Please enter a valid email address.",
+    errSend: "Something went wrong. Please try again in a moment.", errSetup: "Signups open soon. Meanwhile, reach us at contact@safaqa.app.",
+    okTitle: "You're on the list!", okSub: "Thank you for joining. We'll be in touch with early access as soon as Safaqa opens.",
+    fAbout: "Connecting business owners and investors across MENA through trust, transparency, and structure.",
+    fContact: "Contact", fFollow: "Follow us", fCopy: "Safaqa. All rights reserved.", fMade: "Built for the Middle East's business owners."
+  },
+  ar: {
+    metaTitle: "صفقة | بيع وشراء الشركات الموثوقة في الشرق الأوسط",
+    metaDesc: "صفقة أول منصة في الشرق الأوسط لبيع وشراء الشركات الموثّقة، مع فحص نافٍ للجهالة وتدقيق مالي والتحقق من هوية الطرفين. انضم إلى قائمة الانتظار.",
+    navSellers: "للبائعين", navBuyers: "للمشترين", navTrust: "لماذا صفقة", navCta: "انضم إلى قائمة الانتظار",
+    heroPill: "قريبًا في أنحاء الشرق الأوسط وشمال أفريقيا",
+    heroTitle: "خيارك الأول للتخارج.<br><em>وبوابتك لدخول السوق.</em>",
+    heroSub: "صفقة هي أول منصة في المنطقة تجمع أصحاب الأعمال الباحثين عن تخارج أو استثمار بمشترين جرى التحقق منهم بالكامل.",
+    heroCta: "انضم إلى قائمة الانتظار", heroNote: "وصول مبكر للأعضاء المؤسسين",
+    tr1: "إعلانات موثّقة", tr2: "سرية تامة افتراضيًا", tr3: "تحقق من هوية الطرفين",
+    altBanner: "صفقة: خيارك الأول للتخارج، وبوابتك لدخول السوق. أفق مدينة عند الغروب ومنصة صفقة معروضة على حاسوب محمول.",
+    sEyebrow: "للبائعين", sTitle: "فصلك القادم، بشروطك أنت.",
+    sSub: "اعرض شركتك بسرية تامة أيًّا كان هدفك. نتولى نحن العمل الشاق لتبقى متفرغًا لإدارة أعمالك.",
+    g1: "التخارج", g1d: "بِع شركتك بالكامل واجنِ ثمار ما بنيته.",
+    g2: "التقاعد", g2d: "سلّم الدفة لخلف تثق به.",
+    g3: "إدخال شريك", g3d: "استقطب تمويلًا أو بِع حصة لتسريع النمو.",
+    g4: "الامتياز التجاري", g4d: "اعثر على مشغّلين مؤهلين لتوسيع علامتك التجارية.",
+    hTitle: "صفقة تتولى الجزء الأصعب",
+    h1: "تدقيق مالي", h1d: "مراجعة مستقلة لحساباتك ليثق المشترون بالأرقام.",
+    h2: "تقييم احترافي", h2d: "سعر عادل ومُبرَّر مبني على بيانات السوق.",
+    h3: "التحقق من المشترين", h3d: "لا يصل إلى إعلانك إلا مشترون موثّقون وقادرون على الدفع.",
+    conf: "تبقى هويتك سرية حتى توافق على كل مشترٍ بنفسك.",
+    bEyebrow: "للمشترين", bTitle: "استثمر في شركات تستحق ثقتك فعلًا.",
+    bSub: "تصفّح فرصًا أُنجز فيها العمل التمهيدي مسبقًا. كل شركة معروضة على صفقة اجتازت الفحص النافي للجهالة قبل أن تصل إليك.",
+    b1: "فحص نافٍ للجهالة مكتمل", b1d: "مراجعات قانونية وتشغيلية وتجارية تُنجز قبل إدراج أي شركة.",
+    b2: "قوائم مالية مدققة", b2d: "الإيرادات والهوامش والتدفقات النقدية يراجعها ويتحقق منها مختصون ماليون.",
+    b3: "التحقق من الخلفية", b3d: "نفحص الملاك وأصحاب المصلحة الرئيسيين لتعرف تمامًا مع من تتعامل.",
+    navHow: "كيف تعمل المنصة", navMena: "في المنطقة", navMenu: "القائمة", navMobile: "قائمة الموقع",
+    oEyebrow: "فرص مميّزة", oTitle: "لمحة عمّا ينتظرك", oNote: "إعلانات توضيحية. الأرقام المالية معروضة كنطاقات.",
+    oConf: "سرّي", oFeat: "مميّز", oVer: "موثّق", oCta: "احصل على وصول مبكر",
+    o1: "الأغذية والمشروبات", o2: "التصنيع", o3: "الخدمات المهنية", o4: "اللياقة والعافية",
+    fAsk: "السعر المطلوب", fRev: "الإيرادات السنوية", fMar: "هامش الربح",
+    alt4: "استوديو لياقة بمعدات تدريب حديثة",
+    pEyebrow: "كيف تعمل صفقة", pTitle: "طريقة أبسط وأكثر أمانًا لإتمام الصفقات.",
+    pSub: "من النظرة الأولى حتى الإغلاق، تجري كل خطوة ضمن مسار موثّق وسرّي.",
+    p1: "اكتشف الفرص", p1d: "تصفّح شركات موثّقة في أنحاء المنطقة.",
+    p2: "اطلب الاطلاع", p2d: "وقّع اتفاقية السرية واحصل على تفاصيل الشركة.",
+    p3: "تواصل وقيّم", p3d: "تواصل بأمان مع أطراف مؤهلة.",
+    p4: "أتمم الصفقة", p4d: "احصل على دعم الخبراء خلال الفحص النافي للجهالة وحتى الإغلاق.",
+    dEyebrow: "إعلان توضيحي", dTitle: "استوديو لياقة راسخ", dLoc: "بيروت، لبنان · اللياقة والعافية",
+    l1: "معلومات الشركة", l2: "المستندات المالية", l3: "بيانات التواصل مع المالك", lLocked: "مقفل",
+    jTitle: "تحقّق مرة واحدة، واطّلع على صفقات جادة.",
+    jSub: "تبقى التفاصيل الخاصة مقفلة حتى يُستكمل التحقق من المشتري ويوقّع اتفاقية السرية الخاصة بتلك الصفقة.",
+    j1: "أنشئ حسابك", j1d: "سجّل أو ادخل إلى حسابك على صفقة.",
+    j2: "أكّد بريدك الإلكتروني", j2d: "أكّد عنوانك برمز يُستخدم مرة واحدة.",
+    j3: "أكمل ملفك كمشترٍ", j3d: "نوع المشتري والقطاعات التي تهمك ونطاق ميزانيتك.",
+    j4: "أكمل التحقق من الهوية (KYC)", j4d: "قدّم مستندات هويتك للمراجعة.",
+    j5: "وقّع اتفاقية السرية", j5d: "اطلب الاطلاع على الفرصة المحددة.",
+    j6: "تم منح الوصول", j6d: "تُفتح معلومات الشركة وبياناتها المالية وبيانات التواصل مع المالك.",
+    mEyebrow: "في أنحاء المنطقة", mTitle: "منصة واحدة. خمسة عشر سوقًا.",
+    mSub: "مقرّنا في بيروت، ونخدم أصحاب الأعمال والمستثمرين من المغرب إلى عُمان.",
+    ctBeirut: "بيروت", ctRiyadh: "الرياض", ctDubai: "دبي", ctCairo: "القاهرة", ctAmman: "عمّان", ctCasa: "الدار البيضاء",
+    altBeirut: "بيروت ليلًا", altRiyadh: "أفق الرياض عند الغسق", altDubai: "أفق دبي", altCairo: "القاهرة ونهر النيل", altAmman: "أفق عمّان عند الغروب", altCasa: "أسطح الدار البيضاء",
+    c15: "15 دولة", cAria: "الدول التي نخدمها",
+    cMA: "المغرب", cDZ: "الجزائر", cTN: "تونس", cLY: "ليبيا", cEG: "مصر", cLB: "لبنان", cJO: "الأردن", cSA: "السعودية",
+    cKW: "الكويت", cBH: "البحرين", cQA: "قطر", cAE: "الإمارات", cOM: "عُمان", cIQ: "العراق", cSY: "سوريا",
+    tfEyebrow: "الثقة والسرية", altTrust: "درع أزرق وقفل ذهبي يلتف حولهما شريط أصفر",
+    pathSell: "اعرض شركتك", pathBuy: "استكشف الفرص",
+    fLoc: "بيروت، لبنان · نخدم المنطقة", fExplore: "استكشف", fCompany: "الشركة", fCredits: "حقوق الصور",
+    sellerChip: "إعلان سرّي", altSeller: "أصحاب أعمال يحتفلون بإتمام صفقة ناجحة",
+    alt1: "مطعم بتصميم داخلي عصري", alt2: "أعمال تصنيع معدني في مصنع", alt3: "مساحة مكتبية عصرية ومشرقة",
+    tEyebrow: "لماذا صفقة", tTitle: "طبقة ثقة تحمي كل صفقة.",
+    tSub: "بيع شركة أو شراؤها من أهم القرارات التي ستتخذها. لذلك نتحقق من كل طرف على الطاولة لتمضي قدمًا بثقة.",
+    tfTitle: "تحقق شامل من الطرفين. بلا استثناء.", tfSub: "يخضع البائعون والمشترون للمعايير الصارمة نفسها قبل بدء أي محادثة.",
+    t1: "فحص نافٍ للجهالة شامل", t1d: "مراجعة قانونية وتجارية وتشغيلية لكل شركة معروضة.",
+    t2: "تدقيق مالي", t2d: "قوائم مالية موثّقة بشكل مستقل، لا أرقام يصرّح بها البائع وحده.",
+    t3: "اعرف عميلك (KYC) للطرفين", t3d: "التحقق من هوية كل بائع وكل مشترٍ.",
+    t4: "إثبات الملاءة المالية", t4d: "يُثبت المشترون قدرتهم على إتمام الصفقة قبل الاطلاع على أي بيانات حساسة.",
+    t5: "تحليل المخاطر", t5d: "تقارير مخاطر واضحة تُبرز ما يهم قبل أن تلتزم.",
+    t6: "وصول مضبوط", t6d: "لا تُشارك المعلومات الحساسة إلا مع مشترين مؤهلين.",
+    wEyebrow: "مستعد للخطوة التالية؟", wTitle: "كن من أوائل المنضمين عند إطلاق صفقة.",
+    wSub: "انضم إلى قائمة الانتظار لتحصل على وصول مبكر وأولوية في التسجيل وآخر أخبار الإطلاق. بلا رسائل مزعجة.",
+    roleLegend: "أنا مهتم بـ", rSell: "البيع", rBuy: "الشراء", rBoth: "كليهما",
+    emailLabel: "البريد الإلكتروني", emailPh: "you@company.com", submit: "انضم إلى القائمة",
+    fine: "لن نستخدم بريدك إلا لإبلاغك بأخبار إطلاق صفقة.",
+    errEmpty: "يُرجى إدخال بريدك الإلكتروني.", errInvalid: "يُرجى إدخال بريد إلكتروني صحيح.",
+    errSend: "حدث خطأ ما. يُرجى المحاولة مجددًا بعد قليل.", errSetup: "التسجيل يُفتح قريبًا. وفي الأثناء، راسلنا على contact@safaqa.app.",
+    okTitle: "تم تسجيلك بنجاح!", okSub: "شكرًا لانضمامك. سنتواصل معك لمنحك وصولًا مبكرًا فور إطلاق صفقة.",
+    fAbout: "نربط أصحاب الأعمال بالمستثمرين في أنحاء المنطقة على أساس من الثقة والشفافية والتنظيم.",
+    fContact: "تواصل معنا", fFollow: "تابعنا", fCopy: "صفقة. جميع الحقوق محفوظة.", fMade: "صُممت لأصحاب الأعمال في الشرق الأوسط."
+  }
+};
+
+(function () {
+  const root = document.documentElement;
+  let lang = "en";
+
+  function setLang(next) {
+    const t = I18N[next];
+    if (!t) return;
+    lang = next;
+    root.lang = next;
+    root.dir = next === "ar" ? "rtl" : "ltr";
+    document.title = t.metaTitle;
+    document.querySelector('meta[name="description"]').setAttribute("content", t.metaDesc);
+    document.querySelectorAll("[data-i18n]").forEach(el => { const k = el.dataset.i18n; if (t[k] != null) el.textContent = t[k]; });
+    document.querySelectorAll("[data-i18n-html]").forEach(el => { const k = el.dataset.i18nHtml; if (t[k] != null) el.innerHTML = t[k]; });
+    document.querySelectorAll("[data-i18n-ph]").forEach(el => { const k = el.dataset.i18nPh; if (t[k] != null) el.placeholder = t[k]; });
+    document.querySelectorAll("[data-i18n-alt]").forEach(el => { const k = el.dataset.i18nAlt; if (t[k] != null) el.alt = t[k]; });
+    document.querySelectorAll("[data-i18n-aria]").forEach(el => { const k = el.dataset.i18nAria; if (t[k] != null) el.setAttribute("aria-label", t[k]); });
+    const msg = document.getElementById("formMsg");
+    if (msg.dataset.key) msg.textContent = t[msg.dataset.key];
+    try { localStorage.setItem("safaqa-lang", next); } catch (e) {}
+  }
+
+  // Initial language: ?lang=ar, then saved preference, else English
+  let initial = "en";
+  try { initial = new URLSearchParams(location.search).get("lang") || localStorage.getItem("safaqa-lang") || "en"; } catch (e) {}
+  if (initial !== "en") setLang(initial);
+
+  document.getElementById("langToggle").addEventListener("click", () => setLang(lang === "en" ? "ar" : "en"));
+
+  // Header shadow on scroll
+  const header = document.querySelector(".header");
+  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // Scroll reveal
+  const els = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    els.forEach(el => io.observe(el));
+  } else els.forEach(el => el.classList.add("in"));
+
+  // Waitlist form
+  const form = document.getElementById("waitlistForm");
+  const submitBtn = form.querySelector('button[type="submit"]');
+  let sending = false;
+  const email = document.getElementById("email");
+  const msg = document.getElementById("formMsg");
+  const showErr = key => { msg.dataset.key = key || ""; msg.textContent = key ? I18N[lang][key] : ""; email.setAttribute("aria-invalid", key ? "true" : "false"); };
+  email.addEventListener("input", () => { if (msg.dataset.key) showErr(""); });
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const value = email.value.trim();
+    if (!value) return showErr("errEmpty"), email.focus();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) return showErr("errInvalid"), email.focus();
+    showErr("");
+
+    // Bots fill the hidden spam-trap field; pretend success and send nothing
+    if (form._gotcha && form._gotcha.value) return showSuccess();
+
+    if (!/^https:\/\//.test(WAITLIST_ENDPOINT)) return showErr("errSetup");
+    if (sending) return;
+    sending = true;
+    submitBtn.disabled = true;
+
+    fetch(WAITLIST_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        email: value,
+        role: form.role.value,
+        language: lang,
+        _subject: "New Safaqa waitlist signup"
+      })
+    })
+      .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); showSuccess(); })
+      .catch(() => showErr("errSend"))
+      .finally(() => { sending = false; submitBtn.disabled = false; });
+  });
+
+  // Quick paths in the waitlist banner: preselect the role, then focus the email field
+  document.querySelectorAll(".paths [data-role]").forEach(btn => btn.addEventListener("click", () => {
+    const radio = form.querySelector(`input[name="role"][value="${btn.dataset.role}"]`);
+    if (radio) radio.checked = true;
+    email.focus();
+  }));
+
+  function showSuccess() {
+    document.getElementById("formBox").classList.add("done");
+  }
+
+  // ---- Phones & tablets: menu ----
+  const menuBtn = document.getElementById("menuBtn");
+  const isCompact = () => /^(mobile|tablet)$/.test(root.getAttribute("data-device"));
+  function setMenu(open) {
+    root.classList.toggle("menu-open", open);
+    menuBtn.setAttribute("aria-expanded", String(open));
+  }
+  menuBtn.addEventListener("click", () => setMenu(!root.classList.contains("menu-open")));
+  document.querySelectorAll("#mobileMenu a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && root.classList.contains("menu-open")) { setMenu(false); menuBtn.focus(); } });
+  document.addEventListener("click", e => { if (root.classList.contains("menu-open") && !e.target.closest(".header")) setMenu(false); });
+  window.addEventListener("resize", () => { if (!isCompact()) setMenu(false); }, { passive: true });
+
+  // ---- Phones: sticky waitlist bar, visible between the hero and the waitlist form ----
+  const mobileCta = document.getElementById("mobileCta");
+  const ctaLink = mobileCta.querySelector("a");
+  const seen = { hero: true, waitlist: false };
+  function updateCta() {
+    const show = !seen.hero && !seen.waitlist;
+    mobileCta.classList.toggle("show", show);
+    ctaLink.tabIndex = show ? 0 : -1;
+    mobileCta.setAttribute("aria-hidden", String(!show));
+  }
+  if ("IntersectionObserver" in window) {
+    const ctaIO = new IntersectionObserver(entries => {
+      entries.forEach(en => { seen[en.target.id === "waitlist" ? "waitlist" : "hero"] = en.isIntersecting; });
+      updateCta();
+    });
+    ctaIO.observe(document.querySelector(".hero"));
+    ctaIO.observe(document.getElementById("waitlist"));
+  }
+  updateCta();
+
+  // ---- Phones: carousel position dots for listings and cities ----
+  document.querySelectorAll(".opps, .cities").forEach(track => {
+    const items = [...track.children];
+    const dots = document.createElement("div");
+    dots.className = "dots";
+    items.forEach((item, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", (i + 1) + " / " + items.length);
+      b.addEventListener("click", () => item.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" }));
+      dots.appendChild(b);
+    });
+    track.after(dots);
+    function sync() {
+      const step = items.length > 1 ? Math.abs(items[1].offsetLeft - items[0].offsetLeft) : 1;
+      const i = Math.min(items.length - 1, Math.round(Math.abs(track.scrollLeft) / (step || 1)));
+      [...dots.children].forEach((d, j) => d.setAttribute("aria-current", String(j === i)));
+    }
+    track.addEventListener("scroll", sync, { passive: true });
+    sync();
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
